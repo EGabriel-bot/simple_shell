@@ -33,6 +33,7 @@ We have tested our simple shell extensively and it has some bugs.
 
 ## Output
 *Example of our custom shell*
+[![Screenshot-from-2022-04-11-13-46-41.png](https://i.postimg.cc/HxHQCSkp/Screenshot-from-2022-04-11-13-46-41.png)](https://postimg.cc/xkxkv3m7)
 
 ## About
 This simple shell project is part of the first trimester for the Holberton School foundations course.
