@@ -1,5 +1,4 @@
-# simple_shell
-## Simple Shell Project
+# Simple Shell Project
 
 ## Description
 This project is a simple version of the Unix shell command interpeter.
