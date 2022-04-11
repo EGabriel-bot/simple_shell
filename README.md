@@ -21,14 +21,10 @@ Shell is a UNIX term for the interactive user interface with an operating system
 ## Compile
 Every file that composed the whole project is compiled using the following flags:
 
-`gcc -Wall -Werror -Wextra - pedantic`
-
-## Testing
-
-We have tested our simple shell extensively and it has some bugs.
+`gcc -Wall -Werror -Wextra -pedantic`
 
 ## Bugs
-
+We have tested our simple shell extensively. Our shell doesnt has incomplete functionality compared to the UNIX shell.
 
 ## Output
 *Example of our custom shell*
@@ -36,3 +32,6 @@ We have tested our simple shell extensively and it has some bugs.
 
 ## About
 This simple shell project is part of the first trimester for the Holberton School foundations course.
+
+## Authors
+This project was made by Andrew Stone and Eiden Martinez Davila
