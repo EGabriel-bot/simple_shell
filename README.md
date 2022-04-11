@@ -8,7 +8,7 @@ This project is a simple version of the Unix shell command interpeter.
 Shell is a UNIX term for the interactive user interface with an operating system. The shell is the layer of programming that understands and executes the commands a user enters. In some systems, the shell is called a command interpreter.
 
 *Example of the use of the shell:*
-<a href="https://ibb.co/FqpWtJq"><img src="https://i.ibb.co/Z19JCK1/Screenshot-from-2022-04-11-08-45-30.png" alt="Screenshot-from-2022-04-11-08-45-30" border="0"></a>
+[url=https://ibb.co/FqpWtJq][img]https://i.ibb.co/Z19JCK1/Screenshot-from-2022-04-11-08-45-30.png[/img][/url]
 
 ## Prototype
 `int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], char *envp[])`
