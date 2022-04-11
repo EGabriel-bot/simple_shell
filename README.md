@@ -24,7 +24,7 @@ Every file that composed the whole project is compiled using the following flags
 `gcc -Wall -Werror -Wextra -pedantic`
 
 ## Bugs
-We have tested our simple shell extensively. Our shell doesnt has incomplete functionality compared to the UNIX shell.
+We have tested our simple shell extensively. Our shell doesn't handle special characters.
 
 ## Output
 *Example of our custom shell*
