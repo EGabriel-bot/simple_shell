@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 #include <string.h>
 
 /**
@@ -18,12 +17,12 @@ char **tokenizer(char *string, char *delim)
 	int i;
 
 	/*create copy of string to prevent corrupting input*/
-	str = malloc(strlen(string) + 1);
+	str = malloc(_strlen(string) + 1);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
-	str = strcpy(str, string);
+	str = _strcpy(str, string);
 	tmp = str;
 
 	/*create tokens from string*/

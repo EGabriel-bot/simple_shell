@@ -18,10 +18,10 @@ char *_getenv(char *name, char *envp[])
 	while (envp[i] != NULL)
 	{
 		line = tokenizer(envp[i], "=");
-		if (strcmp(line[0], name) == 0)
+		if (_strcmp(line[0], name) == 0)
 		{
-			var = malloc(strlen(line[1]) + 1);
-			var = strcpy(var, line[1]);
+			var = malloc(_strlen(line[1]) + 1);
+			var = _strcpy(var, line[1]);
 			tokenizer_free(line);
 			return (var);
 		}

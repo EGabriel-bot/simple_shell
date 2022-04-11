@@ -1,4 +1,5 @@
 #include "main.h"
+
 int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], char *envp[])
 {
 	int (*f)(char *, char **, char **);
@@ -18,7 +19,7 @@ int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], c
 		/*input needs tokenizer_free*/
 		input = tokenizer(lineptr, " \n");
 
-		if (strcmp(input[0], "exit") == 0)
+		if (_strcmp(input[0], "exit") == 0)
 		{
 			free(lineptr);
 			lineptr = NULL;

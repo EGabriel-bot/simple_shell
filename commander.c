@@ -19,17 +19,17 @@ char *commander(char *path, char *input)
 
 	dir = tokenizer(path, ":");
 
-	temp = malloc(strlen(input) + 2);
-	temp = strcpy(temp, "/");
-	temp = strcat(temp, input);
-	temp = strcat(temp, "\0");
+	temp = malloc(_strlen(input) + 2);
+	temp = _strcpy(temp, "/");
+	temp = _strcat(temp, input);
+	temp = _strcat(temp, "\0");
 
 	command = malloc(1);
 	for (i = 0; dir[i] != NULL; i++)
 	{
-		command = realloc(command, strlen(dir[i]) + strlen(temp) + 1);
-		command = strcpy(command, dir[i]);
-		command = strcat(command, temp);
+		command = realloc(command, _strlen(dir[i]) + _strlen(temp) + 1);
+		command = _strcpy(command, dir[i]);
+		command = _strcat(command, temp);
 		if (stat(command, &info) == 0)
 		{
 			free(temp);
@@ -42,7 +42,7 @@ char *commander(char *path, char *input)
 	free(temp);
 	temp = NULL;
 	tokenizer_free(dir);
-	command = strcpy(command, input);
+	command = _strcpy(command, input);
 	return (command);
 }
 
