@@ -2,8 +2,9 @@
 
 /**
  * run_program - executes a program that exists in PATH
- * @command_path - full pathname of program file
- * input: double pointer to user input
+ * @command_path: full pathname of program file
+ * @input: double pointer to user input
+ * @envp: double pointer to environment
  *
  * Return: integer value
  */

@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
  * commander - builds command pathname if it exists
  * @path: pointer to char (PATH string from environment)
@@ -46,22 +45,20 @@ char *commander(char *path, char *input)
 	return (command);
 }
 
-/*
-int main(int argc, char *argv[], char *envp[])
-{
-	char *path = _getenv("PATH", envp);
+   /* int main(int argc, char *argv[], char *envp[]) */
+   /* { */
+   /* char *path = _getenv("PATH", envp); */
 
-	char *command = commander(path, argv[1]);
+   /* char *command = commander(path, argv[1]); */
 
-	(void)argc;
+   /* (void)argc; */
 
-	printf("%s\n", command);
+   /* printf("%s\n", command); */
 
-	fflush(NULL);
+   /* fflush(NULL); */
 
-	free(path);
-	free(command);
+   /* free(path); */
+   /* free(command); */
 
-	return (0);
-}
-*/
+   /* return (0); */
+   /* } */

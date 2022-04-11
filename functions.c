@@ -2,7 +2,7 @@
 
 /**
  * bad_command - handles commands not in the path or special to JABS shell
- * @command_path - pointer to char
+ * @command_path: pointer to char
  * @input: double pointer to user input
  * @envp: double pointer to environment
  *
@@ -28,15 +28,4 @@ int bad_command(char *command_path, char **input, char **envp)
  *
  * Return: always 0
  */
-/*
-int _printenv(char *command_path, char **input, char **envp)
-{
-	(void)command_path;
-	(void)envp;
-	(void)input;
 
-	run_program(env);
-
-	return (0);
-}
-*/

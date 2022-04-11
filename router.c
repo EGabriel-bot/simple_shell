@@ -11,35 +11,32 @@ int (*router(char **input, char *command_path))(char*, char**, char**)
 {
 	(void)command_path;
 
-	if(_strcmp(input[0], command_path) == 0)
+	if (_strcmp(input[0], command_path) == 0)
 	{
 		return (bad_command);
 	}
 	else
 	{
-		return(run_program);
+		return (run_program);
 	}
 }
 
+/* main - test router */
 
-/**
- * main - test router
- *
- * Return: always 0
- */
-/*
-int main(int argc, char **argv, char **envp)
-{
-	int (*f)(char *, char **, char **);
+/* Return: always 0 */
 
-	(void)argc;
 
-	argv++;
+/* int main(int argc, char **argv, char **envp) */
+/* { */
+/*	int (*f)(char *, char **, char **); */
 
-	f = router(argv, "not used");
+/*	(void)argc; */
 
-	f("/usr/bin/ls", argv, envp);
+/*	argv++; */
 
-	return(0);
-}
-*/
+/*	f = router(argv, "not used"); */
+
+/*	f("/usr/bin/ls", argv, envp); */
+
+/*	return(0); */
+/* } */

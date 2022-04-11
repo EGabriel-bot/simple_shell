@@ -31,18 +31,15 @@ char *_getenv(char *name, char *envp[])
 	return (NULL);
 }
 
+   /* int main (int ac, char *av[], char *envp[]) */
+   /* { */
+   /* char *result = _getenv("PATH", envp); */
 
-/*
-int main (int ac, char *av[], char *envp[])
-{
-	char *result = _getenv("PATH", envp);
+   /* (void)ac; */
+   /* (void)av; */
 
-	(void)ac;
-	(void)av;
-
- 	printf("%s\n", result);
-	free(result);
-	result = NULL;
- 	return (0); 
-}
-*/
+   /* printf("%s\n", result); */
+   /* free(result); */
+   /* result = NULL; */
+   /* return (0); */
+   /* } */

@@ -1,6 +1,15 @@
 #include "main.h"
+#define unused __attribute__((unused))
 
-int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], char *envp[])
+/**
+ * main - simple shell main function
+ * @argc: pointer to argument count (currently unused)
+ * @argv: pointer to argument vector (currently unused)
+ * @envp: double pointer to the environment
+ *
+ * Return: Return 0 if successful and ERROR if the command does not exists
+ */
+int main(unused int argc, unused char *argv[], char *envp[])
 {
 	int (*f)(char *, char **, char **);
 	char **input, *lineptr = NULL, *path, *command_path;
@@ -8,14 +17,12 @@ int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], c
 
 	while (1)
 	{
-		write(1,"JABS$ ", 6);
+		write(1, "$ ", 3);
 		/*lineptr needs free*/
-		if (getline(&lineptr, &n, stdin) == -1) 
-		{
+		if (getline(&lineptr, &n, stdin) == -1)
 			break;
-		}
 		/*path needs free*/
-		path = _getenv("PATH",envp);
+		path = _getenv("PATH", envp);
 		/*input needs tokenizer_free*/
 		input = tokenizer(lineptr, " \n");
 
@@ -28,12 +35,10 @@ int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], c
 			tokenizer_free(input);
 			exit(0);
 		}
-
 		/*command_path needs free*/
 		command_path = commander(path, input[0]);
 		f = router(input, command_path);
 		f(command_path, input, envp);
-		
 		free(lineptr);
 		lineptr = NULL;
 		free(path);
@@ -42,6 +47,5 @@ int main(__attribute__((unused))int argc,__attribute__((unused)) char *argv[], c
 		free(command_path);
 		command_path = NULL;
 	}
-
 	return (0);
 }

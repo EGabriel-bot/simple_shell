@@ -77,33 +77,29 @@ void tokenizer_free(char **token)
 	}
 }
 
+/* main - used to test troubleshoot tokenizer function */
 
-/**
- * main - used to test troubleshoot tokenizer function
- *
- * Return: always 0
- */
-/*
-   int main(void)
-   {
-   int i;
-   char **word;
-   char *lineptr = NULL;
-   size_t n;
+/* Return: always 0 */
 
-   getline(&lineptr, &n, stdin);
+/* int main(void) */
+/* { */
+/*	int i; */
+/*	char **word; */
+/*	char *lineptr = NULL; */
+/*	size_t n; */
 
-   word = tokenizer(lineptr, " \n");
-   i = 0;
-   while (word[i] != NULL)
-   {
-   printf("%s\n", word[i]);
-   i++;
-   }
+/*	getline(&lineptr, &n, stdin); */
 
-   tokenizer_free(word);
-   free(lineptr);
-   lineptr = NULL;
-   return (0);
-   }
- */
+/*	word = tokenizer(lineptr, " \n"); */
+/*	i = 0; */
+/*	while (word[i] != NULL) */
+/*	{ */
+/*		printf("%s\n", word[i]); */
+/*		i++; */
+/*	} */
+
+/*	tokenizer_free(word); */
+/*	free(lineptr); */
+/*	lineptr = NULL; */
+/*	return (0); */
+/* } */
