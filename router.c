@@ -14,21 +14,15 @@ int (*router(char **input, char *command_path))(char*, char**, char**)
 	(void)command_path;
 
 	if (_strcmp(input[0], "env") == 0)
-	{
 		return (_penv);
-	}
+
 	if (stat(input[0], &info) == 0)
-	{
 		return (run_program);
-	}
-	/* else if (_strcmp(input[0], command_path) == 0) */
-	/* { */
-	/* 	return (bad_command); */
-	/* } */
-	else
-	{
-		return (run_program);
-	}
+
+	if (_strcmp(input[0], command_path) == 0)
+		return (bad_command);
+
+	return (run_program);
 }
 
 /* main - test router */
