@@ -15,7 +15,7 @@ int (*router(char **input, char *command_path))(char*, char**, char**)
 
 	if (stat(input[0], &info) == 0)
 	{
-		return(run_program);
+		return (run_program);
 	}
 	else if (_strcmp(input[0], command_path) == 0)
 	{

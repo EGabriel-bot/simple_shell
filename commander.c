@@ -16,7 +16,7 @@ char *commander(char *path, char *input)
 	char *command, *temp;
 	struct stat info;
 
-	if(stat(input, &info) == 0)
+	if (stat(input, &info) == 0)
 	{
 		command = malloc(_strlen(input) + 1);
 		command = _strcpy(command, input);
