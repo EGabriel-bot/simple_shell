@@ -21,10 +21,10 @@ int (*router(char **input, char *command_path))(char*, char**, char**)
 	{
 		return (run_program);
 	}
-	if (_strcmp(input[0], command_path) == 0)
-	{
-		return (bad_command);
-	}
+	/* else if (_strcmp(input[0], command_path) == 0) */
+	/* { */
+	/* 	return (bad_command); */
+	/* } */
 	else
 	{
 		return (run_program);
