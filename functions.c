@@ -28,18 +28,18 @@ int bad_command(char *command_path, char **input, char **envp)
  *
  * Return: always 0
  */
-int _penv(char *command_path, char **input, char **envp)
-{
-	int i = 0;
+/* int _penv(char *command_path, char **input, char **envp) */
+/* { */
+/* 	int i = 0; */
 
-	(void)command_path;
-	(void)envp;
+/* 	(void)command_path; */
+/* 	(void)envp; */
 
-	while (envp[i] != NULL)
-	{
-		write(1, envp[i], _strlen(envp[i]));
-		write(1, "\n", 1);
-		i++;
-	}
-	return (0);
-}
+/* 	while (envp[i] != NULL) */
+/* 	{ */
+/* 		write(1, envp[i], _strlen(envp[i])); */
+/* 		write(1, "\n", 1); */
+/* 		i++; */
+/* 	} */
+/* 	return (0); */
+/* } */
