@@ -9,9 +9,15 @@
  */
 int (*router(char **input, char *command_path))(char*, char**, char**)
 {
+	struct stat info;
+
 	(void)command_path;
 
-	if (_strcmp(input[0], command_path) == 0)
+	if (stat(input[0], &info) == 0)
+	{
+		return(run_program);
+	}
+	else if (_strcmp(input[0], command_path) == 0)
 	{
 		return (bad_command);
 	}

@@ -24,3 +24,16 @@ int run_program(char *command_path, char **input, char **envp)
 
 	return (0);
 }
+
+/*
+int main(int argc, char **argv, char**envp)
+{
+	char *command = "/bin/ls";
+
+	(void)argc;
+
+	run_program(command, argv, envp);
+
+	return (0);
+}
+*/
