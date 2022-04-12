@@ -15,12 +15,21 @@ int main(unused int argc, unused char *argv[], char *envp[])
 	char **input, *lineptr = NULL, *path, *command_path;
 	size_t n = 0;
 
+/*	signal(SIGINT, sig_c_handler);*/
 	while (1)
 	{
 		write(1, "($) ", 4);
 		/*lineptr needs free*/
 		if (getline(&lineptr, &n, stdin) == -1)
+		{
+			free(lineptr);
+			lineptr = NULL;
 			break;
+		}
+
+		if (lineptr[0] == '\n')
+			continue;
+
 		/*path needs free*/
 		path = _getenv("PATH", envp);
 		/*input needs tokenizer_free*/
@@ -49,3 +58,9 @@ int main(unused int argc, unused char *argv[], char *envp[])
 	}
 	return (0);
 }
+
+
+/**
+ * sig_c_handler - defines action for SIGINT (ctrl c)
+ * @
+ */
