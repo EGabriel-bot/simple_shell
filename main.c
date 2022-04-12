@@ -18,7 +18,8 @@ int main(unused int argc, unused char *argv[], char *envp[])
 /*	signal(SIGINT, sig_c_handler);*/
 	while (1)
 	{
-		write(1, "($) ", 4);
+		if(isatty(0))
+			write(1, "JABS$ ", 6);
 		/*lineptr needs free*/
 		if (getline(&lineptr, &n, stdin) == -1)
 		{
