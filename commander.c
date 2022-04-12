@@ -19,6 +19,7 @@ char *commander(char *path, char *input)
 	if (stat(input, &info) == 0)
 	{
 		command = malloc(_strlen(input) + 1);
+		command = realloc(command, _strlen(input) + 1);
 		command = _strcpy(command, input);
 		return (command);
 	}
