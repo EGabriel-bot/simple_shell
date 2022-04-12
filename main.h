@@ -22,6 +22,7 @@ char *commander(char *path, char *input);
 int (*router(char **input, char *command_path))(char*, char**, char**);
 int run_program(char *command_path, char **input, char **envp);
 int bad_command(char *command_path, char **input, char **envp);
+int _printenv(char *command_path, char **input, char **envp);
 
 #endif
 
