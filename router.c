@@ -13,11 +13,11 @@ int (*router(char **input, char *command_path))(char*, char**, char**)
 
 	(void)command_path;
 
-	if (_strcmp(input[0], "env") == 0)
-	{
-		return (_printenv);
-	}
-	else if (stat(input[0], &info) == 0)
+	/* if (_strcmp(input[0], "env") == 0) */
+	/* { */
+	/* 	return (_printenv); */
+	/* } */
+	if (stat(input[0], &info) == 0)
 	{
 		return (run_program);
 	}
