@@ -1,6 +1,8 @@
 #include "main.h"
 #define unused __attribute__((unused))
 
+int flag = 0;
+
 /**
  * main - simple shell main function
  * @argc: pointer to argument count (currently unused)
@@ -15,19 +17,26 @@ int main(unused int argc, unused char *argv[], char *envp[])
 	char **input, *lineptr = NULL, *path, *command_path;
 	size_t n = 0;
 
-/*	signal(SIGINT, sig_c_handler);*/
+	signal(SIGINT, sig_c_handler);
 	while (1)
 	{
 		if(isatty(0))
 			write(1, "JABS$ ", 6);
 		/*lineptr needs free*/
-		if (getline(&lineptr, &n, stdin) == -1)
+		if (flag == 1 || getline(&lineptr, &n, stdin) == -1)
 		{
 			free(lineptr);
 			lineptr = NULL;
 			break;
 		}
-
+/*
+		if (flag == 1)
+		{
+			free(lineptr);
+			lineptr = NULL;
+			break;
+		}
+*/
 		if (lineptr[0] == '\n')
 			continue;
 
@@ -63,5 +72,12 @@ int main(unused int argc, unused char *argv[], char *envp[])
 
 /**
  * sig_c_handler - defines action for SIGINT (ctrl c)
- * @
+ * @signum: int signal number representing ctrl c
+ *
+ * Return: no return value
  */
+void sig_c_handler(int signum)
+{
+	(void)signum;
+	flag = 1;
+}
