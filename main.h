@@ -18,7 +18,7 @@ int _putchar(char c);
 char *_getenv(char *name, char *envp[]);
 char *_strcat(char *dest, char *src);
 char **tokenizer(char *str, char *delim);
-char *commander(char* path, char* input);
+char *commander(char *path, char *input);
 int (*router(char **input, char *command_path))(char*, char**, char**);
 int run_program(char *command_path, char **input, char **envp);
 int bad_command(char *command_path, char **input, char **envp);
