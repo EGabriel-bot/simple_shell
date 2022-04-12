@@ -35,13 +35,11 @@ int _printenv(char *command_path, char **input, char **envp)
 	(void)command_path;
 	(void)envp;
 
-	/* printf("test\n"); */
 	while (envp[i] != NULL)
 	{
-		write(1,envp[i],_strlen(envp[i]));
-		write (1, "\n", 1);
+		write(1, envp[i], _strlen(envp[i]));
+		write(1, "\n", 1);
 		i++;
 	}
-
 	return (0);
 }
