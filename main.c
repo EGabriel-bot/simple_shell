@@ -30,7 +30,7 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		}
 
 		flag = 0;
-		for (i = 0; lineptr[i] != '\0'; i++)
+		for (i = 0; i < _strlen(lineptr); i++)
 		{
 			if (lineptr[i] == ' ' || lineptr[i] == '\n' || lineptr[i] == '\t')
 			{	
@@ -44,7 +44,11 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		}
 
 		if (flag == 0)
+		{
+			free(lineptr);
+			lineptr = NULL;
 			continue;
+		}
 
 		if (lineptr[0] == '\n')
 			continue;
@@ -54,16 +58,6 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		/*input needs tokenizer_free*/
 		input = tokenizer(lineptr, " \n");
 
-/*		if (input[0] == 0)
-		{
-			free(path);
-			free(input);
-			tokenizer_free(input);
-			free(lineptr);
-			lineptr = NULL;
-			continue;
-		}
-*/
 		if (_strcmp(input[0], "exit") == 0)
 		{
 			free(lineptr);
