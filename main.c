@@ -14,6 +14,7 @@ int main(unused int argc, unused char *argv[], char *envp[])
 	int (*f)(char *, char **, char **);
 	char **input, *lineptr = NULL, *path, *command_path;
 	size_t n = 0;
+	int i, flag;
 
 /*	signal(SIGINT, (void (*)(int))sig_c_handler);*/
 	while (1)
@@ -27,6 +28,24 @@ int main(unused int argc, unused char *argv[], char *envp[])
 			lineptr = NULL;
 			exit(0);
 		}
+
+		flag = 0;
+		for (i = 0; lineptr[i] != '\0'; i++)
+		{
+			if (lineptr[i] == ' ' || lineptr[i] == '\n' || lineptr[i] == '\t')
+			{	
+
+			}	
+			else
+			{
+				flag++;
+			}
+			i++;
+		}
+
+		if (flag == 0)
+			continue;
+
 		if (lineptr[0] == '\n')
 			continue;
 
@@ -35,6 +54,16 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		/*input needs tokenizer_free*/
 		input = tokenizer(lineptr, " \n");
 
+/*		if (input[0] == 0)
+		{
+			free(path);
+			free(input);
+			tokenizer_free(input);
+			free(lineptr);
+			lineptr = NULL;
+			continue;
+		}
+*/
 		if (_strcmp(input[0], "exit") == 0)
 		{
 			free(lineptr);
