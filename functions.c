@@ -28,7 +28,7 @@ int bad_command(char *command_path, char **input, char **envp)
  *
  * Return: always 0
  */
-int _printenv(char *command_path, char **input, char **envp)
+int _penv(char *command_path, char **input, char **envp)
 {
 	int i = 0;
 
