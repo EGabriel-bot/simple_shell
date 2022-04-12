@@ -17,11 +17,11 @@ int (*router(char **input, char *command_path))(char*, char**, char**)
 	{
 		return (_printenv);
 	}
-	else if (stat(input[0], &info) == 0)
+	if (stat(input[0], &info) == 0)
 	{
 		return (run_program);
 	}
-	else if (_strcmp(input[0], command_path) == 0)
+	if (_strcmp(input[0], command_path) == 0)
 	{
 		return (bad_command);
 	}
