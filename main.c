@@ -38,7 +38,6 @@ int main(unused int argc, unused char *argv[], char *envp[])
 			{
 				flag++;
 			}
-			i++;
 		}
 
 		if (flag == 0)
