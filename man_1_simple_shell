@@ -52,6 +52,14 @@ Compiler:
 
 - prints what's inside the file
 
+.B Handles PATH
+
+- every single command can be used without the need of writing the whole path for example:
+
+.B ls
+.B echo
+.B cat
+
 .SH AUTHORS
 
 .br
