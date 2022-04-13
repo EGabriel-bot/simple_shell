@@ -19,14 +19,22 @@ int bad_command(char *command_path, char **input, char **envp)
 	return (0);
 }
 
+
+/**
+ * _penv - print environment
+ * @envp: double pointer to environment variable
+ *
+ * Return: always 0
+ */
+
 int _penv(char **envp)
 {
 	int i;
 
-	for(i = 0; envp[i] != NULL; i++)
+	for (i = 0; envp[i] != NULL; i++)
 	{
 		write(1, envp[i], _strlen(envp[i]));
-		write(1, "\n", 1);
+		write(1, "\n", 2);
 	}
 
 	return (0);

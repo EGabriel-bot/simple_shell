@@ -16,12 +16,10 @@ int main(unused int argc, unused char *argv[], char *envp[])
 	size_t n = 0;
 	int i, flag;
 
-/*	signal(SIGINT, (void (*)(int))sig_c_handler);*/
 	while (1)
 	{
-		if(isatty(0))
+		if (isatty(0))
 			write(1, "JABS$ ", 6);
-		/*lineptr needs free*/
 		if (getline(&lineptr, &n, stdin) == -1)
 		{
 			free(lineptr);
@@ -33,9 +31,9 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		for (i = 0; i < _strlen(lineptr); i++)
 		{
 			if (lineptr[i] == ' ' || lineptr[i] == '\n' || lineptr[i] == '\t')
-			{	
+			{
 
-			}	
+			}
 			else
 			{
 				flag++;
@@ -53,16 +51,15 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		if (lineptr[0] == '\n')
 			continue;
 
-		if (_strcmp(lineptr, "env") == 0)
+		if (_strcmp(lineptr, "env\n") == 0)
 		{
 			_penv(envp);
 			free(lineptr);
 			lineptr = NULL;
+			continue;
 		}
 
-		/*path needs free*/
 		path = _getenv("PATH", envp);
-		/*input needs tokenizer_free*/
 		input = tokenizer(lineptr, " \n");
 
 		if (_strcmp(input[0], "exit") == 0)
@@ -74,7 +71,6 @@ int main(unused int argc, unused char *argv[], char *envp[])
 			tokenizer_free(input);
 			exit(0);
 		}
-		/*command_path needs free*/
 		command_path = commander(path, input[0]);
 		f = router(input, command_path);
 		f(command_path, input, envp);
@@ -88,19 +84,3 @@ int main(unused int argc, unused char *argv[], char *envp[])
 	}
 	return (0);
 }
-
-
-/**
- * sig_c_handler - defines action for SIGINT (ctrl c)
- * @signum: int signal number representing ctrl c
- *
- * Return: no return value
- */
-
-/*
-int sig_c_handler(int signum)
-{
-	(void)signum;
-	flag = 1;
-}
-*/
