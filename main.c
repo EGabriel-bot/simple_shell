@@ -53,6 +53,13 @@ int main(unused int argc, unused char *argv[], char *envp[])
 		if (lineptr[0] == '\n')
 			continue;
 
+		if (_strcmp(lineptr, "env") == 0)
+		{
+			_penv(envp);
+			free(lineptr);
+			lineptr = NULL;
+		}
+
 		/*path needs free*/
 		path = _getenv("PATH", envp);
 		/*input needs tokenizer_free*/
